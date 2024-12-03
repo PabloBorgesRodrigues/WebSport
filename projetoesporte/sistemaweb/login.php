@@ -6,12 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login LibertySports</title>
-    <link rel="stylesheet" href="assets/css/style.css" type="text/css">    
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">  
+    <script type="text/javascript" src="js/javascript.js"></script>  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</head>
-
+  </head>
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -51,9 +51,8 @@
               <li class="nav-item">
                 <a class="nav-link text-primary" href="projeto.php">Cadastrar</a>
               </li>
-              <div class="d-flex">
+              <div class="position-absolute top-50 end-0 translate-middle-y">
               <a href="login.php" class="btn btn-primary">Login</a>
-
             </div>
             <div class="d-flex">
             <?php  if(isset($_SESSION['logado'])): ?>
@@ -64,7 +63,6 @@
            <?php  if(isset($_SESSION['logado'])): ?>
             <a href="sair.php" class="btn btn-danger">Sair</a>
             <<?php endif;?>
-            
           </div>
             </ul>
             </form>
@@ -82,8 +80,11 @@
 
                 <div class="px-4 mb-sm-4">
                     <label for="password" class="form-label">Senha</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Digite sua senha entre 8 e 16 caracteres." value="<?php if(isset($res)){echo $res['cli_password'];}?>" required>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Digite sua senha entre 8 e 16 caracteres." value="<?php if(isset($res)){echo $res['cli_password'];}?>" required>    
                 </div>
+                <div class="px-4 mb-sm-4 p-4 text-danger d-none" id="email-required-error">Email é obrigatório!</div>
+                <div class="px-4 mb-sm-4 p-4 text-danger d-none" id="email-invalid-error">Email invalido!</div>
+                <div class="px-4 mb-sm-4 p-4 text-danger d-none" id="password-required-error">Senha invalida!</div>
                 <div class="d-grid gap-2 d-md-flex justify-content-end">
                   <div class="col-auto p-2">
                   <button class="btn btn-secondary me-md-2 col-12" type="button"onclick="window.location.href='https://localhost/sistemaweb/projeto.php';">
@@ -93,18 +94,10 @@
                   <button class="btn btn-primary me-md-2 col-12" type="submit" name="btn_submit" 
                   value="<?php if(isset($res)){echo "Enviar";}?>" id="btn_sub" class="btn btn-success btn-lg">Enviar</button>
                 </div>
-                </div>   
      </form>
       </div> 
       </div>
       </main>
-
-
-
-
-                
-
-
       <footer class="bg-light text-dark pt-5 pb-4">
       <div class="container text-center text-md-left">
           <div class="row text-center text-md-left" id="footer_content">
