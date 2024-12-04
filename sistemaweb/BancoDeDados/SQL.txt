@@ -1,0 +1,36 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+-- Host: 127.0.0.1
+-- Versão do servidor: 10.4.22-MariaDB
+-- versão do PHP: 8.2.12
+
+-- Criação do banco de dados "libertysport"
+
+CREATE DATABASE libertysport;
+
+-- Selecionar o banco de dados em uso
+USE libertysport;
+
+-- Criação da tabela "cliente"
+
+CREATE TABLE libertysport.cliente (
+    cli_id INT NOT NULL AUTO_INCREMENT,
+    cli_nome VARCHAR(30) NOT NULL,
+    cli_sobrenome VARCHAR(30) NOT NULL,
+    cli_cpf VARCHAR(14) NOT NULL,
+    cli_email VARCHAR(50) NOT NULL,
+    cli_password VARCHAR(16) NOT NULL,
+    cli_fone VARCHAR(20) NOT NULL,
+    cli_dtnasc DATE NOT NULL,
+    cli_sexo VARCHAR(20) NOT NULL,
+    PRIMARY KEY (cli_id)
+);
+
+--Inserir cliente teste no banco de dados 
+INSERT INTO cliente:
+ ("INSERT INTO cliente (cli_nome, cli_sobrenome, cli_cpf, cli_email, cli_password, cli_fone, cli_dtnasc, cli_sexo)
+  VALUES (:n, :s, :c, :e, :p, :f, :d, :se)");
+OU PELO BD
+INSERT INTO cliente (cli_nome, cli_sobrenome, cli_cpf, cli_email, cli_password, cli_fone, cli_dtnasc, cli_sexo)
+VALUES ('Nome','Sobrenome','123.456.789-01','admin@example.com','senha123','11 99999-9999','1990-01-01','Masculino');
